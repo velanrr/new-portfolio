@@ -1,0 +1,1 @@
+@keyframes train{0%{transform:translateX(0)}to{transform:translateX(-320px)}}.animate-train{animation:train 2.5s ease-in-out infinite;will-change:transform}@media (prefers-reduced-motion:reduce){.animate-train{animation:none}}

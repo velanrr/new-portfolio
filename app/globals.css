@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+
+
+html, body {
+  @apply h-full m-0 p-0;
+}
+
+pre code {
+  display: grid;
+  counter-reset: line;
+}
+
+code > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  width: 1.5rem;
+  padding-right: 1rem;
+  text-align: right;
+  color: #9ca3af; 
+  display: inline-block;
+}
+
+[data-line][data-highlighted] {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.code {
+  @apply bg-gray-200 text-pink-600 px-1 py-[2px] rounded font-mono text-[0.875em];
+}
+
+/* Cloud Animation CSS */
+@keyframes cloudMove {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+.cloud-img {
+  position: absolute;
+  animation: cloudMove linear infinite;
+  animation-duration: calc(var(--i) * 10s);
+  animation-delay: calc(var(--i) * -2s);
+  opacity: 0.7;
+}
